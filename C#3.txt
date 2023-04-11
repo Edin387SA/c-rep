@@ -1,0 +1,66 @@
+using System;
+
+class Numbers
+{
+    private int num1, num2, num3, num4, num5;
+    private int largest;
+    private int smallest;
+
+    public Numbers()
+    {
+        Console.Write("Enter 5 numbers: ");
+        num1 = int.Parse(Console.ReadLine());
+        num2 = int.Parse(Console.ReadLine());
+        num3 = int.Parse(Console.ReadLine());
+        num4 = int.Parse(Console.ReadLine());
+        num5 = int.Parse(Console.ReadLine());
+    }
+
+    ~Numbers()
+    {
+        Console.WriteLine("Numbers object destroyed");
+    }
+
+    public void FindLargest()
+    {
+        largest = num1;
+        if (num2 > largest)
+            largest = num2;
+        if (num3 > largest)
+            largest = num3;
+        if (num4 > largest)
+            largest = num4;
+        if (num5 > largest)
+            largest = num5;
+    }
+
+    public void FindSmallest()
+    {
+        smallest = num1;
+        if (num2 < smallest)
+            smallest = num2;
+        if (num3 < smallest)
+            smallest = num3;
+        if (num4 < smallest)
+            smallest = num4;
+        if (num5 < smallest)
+            smallest = num5;
+    }
+
+    public void Print()
+    {
+        Console.WriteLine("Largest number: " + largest);
+        Console.WriteLine("Smallest number: " + smallest);
+    }
+}
+
+class MainClass
+{
+    static void Main()
+    {
+        Numbers numbers = new Numbers();
+        numbers.FindLargest();
+        numbers.FindSmallest();
+        numbers.Print();
+    }
+}

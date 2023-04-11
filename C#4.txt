@@ -1,0 +1,50 @@
+using System;
+
+class Date
+{
+    private int day, month, year;
+
+    public Date()
+    {
+        DateTime today = DateTime.Now;
+        day = today.Day;
+        month = today.Month;
+        year = today.Year;
+    }
+
+    public Date(int d, int m, int y)
+    {
+        day = d;
+        month = m;
+        year = y;
+    }
+
+    ~Date()
+    {
+        Console.WriteLine("Date object destroyed");
+    }
+
+    public void Print()
+    {
+        Console.WriteLine(day + "/" + month + "/" + year);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Date today = new Date();
+
+        Console.Write("Enter a date (dd mm yyyy): ");
+        int d = int.Parse(Console.ReadLine());
+        int m = int.Parse(Console.ReadLine());
+        int y = int.Parse(Console.ReadLine());
+        Date userDate = new Date(d, m, y);
+
+        Console.Write("Today's date: ");
+        today.Print();
+        Console.Write("User-entered date: ");
+        userDate.Print();
+    }
+}

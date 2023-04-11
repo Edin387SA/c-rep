@@ -1,0 +1,16 @@
+using System;
+
+class MainClass
+{
+    static void Main()
+    {
+        int a, b;
+        Console.WriteLine("unesite ogranicenje za ispis broja");
+        b = int.Parse(Console.ReadLine());
+
+        for (a = 1; a <= b; a++)
+        {
+            Console.Write(a + "  ");
+        }
+    }
+}

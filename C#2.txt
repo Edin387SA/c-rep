@@ -1,0 +1,40 @@
+using System;
+
+class Pravokutnik
+{
+    private float a, b;
+
+    public Pravokutnik()
+    {
+        a = 4.5F;
+        b = 10F;
+    }
+
+    public Pravokutnik(float sirina, float duljina)
+    {
+        a = sirina;
+        b = duljina;
+    }
+
+    public float Povrsina()
+    {
+        float P = a * b;
+        return P;
+    }
+}
+
+class MainClass
+{
+    static void Main()
+    {
+        Pravokutnik prvi = new Pravokutnik();
+        Console.WriteLine("povrsina prvog pravokutnika: " + prvi.Povrsina());
+
+        float s, d;
+        Console.WriteLine("unesite stranice drugog pravokutnika:");
+        s = float.Parse(Console.ReadLine());
+        d = float.Parse(Console.ReadLine());
+        Pravokutnik drugi = new Pravokutnik(s, d);
+        Console.WriteLine("povrsina drugog pravokutnika je: " + drugi.Povrsina());
+    }
+}
